@@ -1,0 +1,123 @@
+{
+  "name": "drupal-composer/drupal-project",
+  "description": "Composer template for Drupal projects",
+  "license": "GPL-2.0+",
+  "authors": [
+      {
+          "name": "",
+          "role": ""
+      }
+  ],
+  "repositories": [
+      {
+          "type": "composer",
+          "url": "https://packagist.drupal-composer.org"
+      },
+      {
+        "type": "package",
+        "package": {
+          "name": "jquery/jquerycycle",
+          "version": "1.0",
+          "type": "drupal-library",
+          "dist": {
+            "url": "http://malsup.github.com/jquery.cycle.all.js",
+            "type": "file"
+          }
+        }
+      }
+  ],
+  "require": {
+    "composer/installers": "^1.0.20",
+    "derhasi/composer-preserve-paths": "0.1.*",
+    "drupal/drupal": "7.*",
+    "drupal/admin_menu": "7.*",
+    "drupal/block_class": "7.*",
+    "drupal/boxes": "7.*",
+    "drupal/ckeditor": "7.*",
+    "drupal/context": "7.*",
+    "drupal/ctools": "7.*",
+    "drupal/custom_search": "7.*",
+    "drupal/devel": "7.*",
+    "drupal/diff": "7.*",
+    "drupal/disqus": "7.*",
+    "drupal/entity": "7.*",
+    "drupal/entityreference": "7.*",
+    "drupal/features": "7.*",
+    "drupal/features_extra": "7.*",
+    "drupal/field_collection": "7.*",
+    "drupal/field_formatter_class": "7.*",
+    "drupal/field_formatter_settings": "7.*",
+    "drupal/field_group": "7.*",
+    "drupal/fontyourface": "7.*",
+    "drupal/globalredirect": "7.*",
+    "drupal/google_analytics": "7.*",
+    "drupal/honeypot": "7.*",
+    "drupal/htmlpurifier": "7.*",
+    "drupal/jquery_update": "7.*",
+    "drupal/libraries": "7.*",
+    "drupal/linkchecker": "7.*",
+    "drupal/memcache": "7.*",
+    "drupal/menu_trail_by_path": "7.*",
+    "drupal/module_filter": "7.*",
+    "drupal/nice_menus": "7.*",
+    "drupal/nodequeue": "7.*",
+    "drupal/page_title": "7.*",
+    "drupal/pathauto": "7.*",
+    "drupal/rabbit_hole": "7.*",
+    "drupal/redirect": "7.*",
+    "drupal/redis": "7.*",
+    "drupal/shield": "7.*",
+    "drupal/shorten": "7.*",
+    "drupal/skinr": "7.*",
+    "drupal/strongarm": "7.*",
+    "drupal/svg_embed": "7.*",
+    "drupal/token": "7.*",
+    "drupal/varnish": "7.*",
+    "drupal/views": "7.*",
+    "drupal/views_accordion": "7.*",
+    "drupal/views_slideshow": "7.*",
+    "drupal/webform": "7.*",
+    "drupal/webform_ajax": "7.*",
+    "drupal/bootstrap": "7.*",
+    "jquery/jquerycycle": "1.*",
+    "ckeditor/ckeditor": "4.*",
+    "predis/predis": "1.*"
+  },
+  "require-dev": {
+      "behat/mink": "~1.6",
+      "behat/mink-goutte-driver": "~1.2",
+      "mikey179/vfsStream": "~1.2",
+      "phpunit/phpunit": "~4.8",
+      "symfony/css-selector": "2.7.*"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "provide": {
+    "composer/installers": "~1.0",
+    "derhasi/composer-preserve-paths": "0.1.*"
+  },
+  "config": {
+    "vendor-dir": "vendor"
+  },
+  "scripts": {
+      "post-update-cmd": "scripts/custom/revert-files.sh"
+  },
+  "extra": {
+    "installer-paths": {
+      "web/": ["type:drupal-core"],
+      "web/sites/all/modules/contrib/{$name}/": ["type:drupal-module"],
+      "web/sites/all/themes/{$name}/": ["type:drupal-theme"],
+      "web/sites/all/libraries/{$name}/": ["type:drupal-library"],
+      "web/sites/all/drush/{$name}/": ["type:drupal-drush"]
+    },
+    "preserve-paths": [
+      "web/sites/all/modules/features",
+      "web/sites/all/modules/custom",
+      "web/sites/all/themes/custom_theme",
+      "web/sites/all/drush",
+      "web/sites/default/settings.php",
+      "web/sites/default/files",
+      "web/profiles/custom_profile"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+# Making Git ignore packages downloaded by Composer
+# Refer to https://goo.gl/tgFd0N on details of how 'unignoring' works
+
+# Unignore the sites dir, .htaccess and robots.txt
+web/*
+!web/sites/
+!web/.htaccess
+!web/robots.txt
+
+# Unignore sites/all and sites/default
+# If there are site-specific directories, add them here
+web/sites/*
+!web/sites/all/
+!web/sites/default/
+
+# Unignore settings.php
+# If there are site-specific settings files, add them here
+web/sites/default/*
+web/sites/default/files
+!web/sites/default/settings.php
+
+# Unignore sites/all/modules
+web/sites/all/*
+!web/sites/all/modules/
+
+# Unignore the custom / features dir
+# If you have a 'patched' dir, add it here
+web/sites/all/modules/*
+!web/sites/all/modules/custom/
+!web/sites/all/modules/features/
+
+# Unignore the themes dir
+!web/sites/all/themes/
+web/sites/all/themes/*
+!web/sites/all/themes/custom-theme/
+
+# Ignore the vendor dir
+/vendor
