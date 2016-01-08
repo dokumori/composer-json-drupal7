@@ -7,7 +7,9 @@ The repo contains the following:
 * composer.json and lock
 * .gitignore
 * robots.txt and .htaccess
-* a custom script to checkout the above two files after ```composer install``` or ```composer.update``` is run and the default files are restored
+* custom scripts to do some cleanup work after install / update:
+  * checkout the above two files after ```composer install``` or ```composer.update``` is run and the default files are restored
+  * deletes the ```.gitignore``` file under the Drupal root so settings.php can be added to the git repo. _NOTE: The build tool must have write access to the Drupal root or the script will fail_
 
 # Why are the directories structured differently to vanilla Drupal?
 The Drupal core and libraries were installed using ```drupal-composer/drupal-project``` of http://drupal-composer.org/, which sets the Drupal root to ```web/```.

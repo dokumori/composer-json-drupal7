@@ -8,13 +8,13 @@ web/*
 !web/robots.txt
 
 # Unignore sites/all and sites/default
-# If there are site-specific directories, add them here
+# If there are multisite directories, add unignore them here
 web/sites/*
 !web/sites/all/
 !web/sites/default/
 
 # Unignore settings.php
-# If there are site-specific settings files, add them here
+# If there are multisite settings files, unignore them here
 web/sites/default/*
 web/sites/default/files
 !web/sites/default/settings.php

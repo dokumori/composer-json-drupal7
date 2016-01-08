@@ -100,7 +100,11 @@
     "vendor-dir": "vendor"
   },
   "scripts": {
-      "post-update-cmd": "scripts/custom/revert-files.sh"
+    "post-install-cmd": "scripts/custom/post-install-update.sh", 
+    "post-update-cmd": [
+      "scripts/custom/revert-files.sh",
+      "scripts/custom/post-install-update.sh"
+    ]
   },
   "extra": {
     "installer-paths": {
