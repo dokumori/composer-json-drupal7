@@ -17,6 +17,7 @@ web/sites/*
 # If there are multisite settings files, unignore them here
 web/sites/default/*
 web/sites/default/files
+web/sites/default/private
 !web/sites/default/settings.php
 
 # Unignore sites/all/modules
